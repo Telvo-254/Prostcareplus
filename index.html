@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prostcareplus - Advanced Prostate Support</title>
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+header {
+  background: #0b3d2e;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0b3d2e, #145c43);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+#countdown {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #FFD700;
+}
+
+.btn {
+  background: #ff7a00;
+  color: white;
+  padding: 15px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #e66900;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.testimonial {
+  background: white;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.order-section {
+  background: #eaf3ef;
+  padding: 60px 20px;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+form input, form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 13px;
+}
+
+@media(max-width:768px){
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+Limited promotional pricing available while supplies last.
+</header>
+
+<section class="hero">
+  <h1>Prostcareplus</h1>
+  <p>Advanced daily prostate support formula designed for men’s wellness.</p>
+  <div id="countdown"></div>
+  <a href="#order" class="btn">Order Now</a>
+</section>
+
+<section class="section">
+  <h2>Why Choose Prostcareplus?</h2>
+  <div class="features">
+    <div class="card">
+      <h3>Natural Ingredients</h3>
+      <p>Carefully selected plant-based compounds traditionally used to support prostate health.</p>
+    </div>
+    <div class="card">
+      <h3>Daily Wellness Support</h3>
+      <p>Formulated to promote comfort and balanced urinary function.</p>
+    </div>
+    <div class="card">
+      <h3>Quality Manufacturing</h3>
+      <p>Produced in facilities following strict quality standards.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Customer Feedback</h2>
+  <div class="testimonial">
+    <p>"After a few weeks, I noticed improved comfort and better nightly rest."</p>
+    <strong>- Michael R.</strong>
+  </div>
+  <div class="testimonial">
+    <p>"Easy to take and fits well into my daily routine."</p>
+    <strong>- James T.</strong>
+  </div>
+</section>
+
+<section id="order" class="order-section">
+  <h2>Complete Your Order</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="tel" placeholder="Phone Number" required>
+    
+    <select required>
+      <option value="">Select Package</option>
+      <option>1 Bottle - $49</option>
+      <option>3 Bottles - $117 ($39 each)</option>
+      <option>6 Bottles - $198 ($33 each)</option>
+    </select>
+    
+    <button class="btn" type="submit">Place Order</button>
+  </form>
+</section>
+
+<footer>
+Prostcareplus is a dietary supplement. This product is not intended to diagnose, treat, cure, or prevent any disease.  
+Consult your healthcare professional before use.
+<br><br>
+© 2026 Prostcareplus. All Rights Reserved.
+</footer>
+
+<script>
+
+// REAL 24-HOUR COUNTDOWN (from page load)
+function startCountdown(duration) {
+  let timer = duration, hours, minutes, seconds;
+  setInterval(function () {
+    hours = parseInt(timer / 3600, 10);
+    minutes = parseInt((timer % 3600) / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    hours = hours < 10 ? "0" + hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    document.getElementById("countdown").textContent =
+      hours + "h : " + minutes + "m : " + seconds + "s";
+
+    if (--timer < 0) {
+      timer = duration;
+    }
+  }, 1000);
+}
+
+window.onload = function () {
+  let twentyFourHours = 24 * 60 * 60;
+  startCountdown(twentyFourHours);
+};
+
+</script>
+
+</body>
+</html>
